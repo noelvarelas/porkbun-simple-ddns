@@ -8,11 +8,16 @@ subdomain="subdomain"
 apikey="pk1_yourapikey"
 secretapikey="sk1_yoursecretapikey"
 
+# YOUR DESIRED LOG DIRECTORY HERE
+log_dir="/path/to/log"
+
 # URI Endpoints
 url_get_v4="https://api.porkbun.com/api/json/v3/dns/retrieveByNameType/$domain/A/$subdomain"
 url_get_v6="https://api.porkbun.com/api/json/v3/dns/retrieveByNameType/$domain/AAAA/$subdomain"
 url_edit_v4="https://api.porkbun.com/api/json/v3/dns/editByNameType/$domain/A/$subdomain"
 url_edit_v6="https://api.porkbun.com/api/json/v3/dns/editByNameType/$domain/AAAA/$subdomain"
+
+date
 
 # Get Current IP Addresses
 ipv4addr=$(curl -s -4 ip.me)
@@ -39,8 +44,8 @@ echo "Existing IPv6 DNS record: $ipv6record"
 if [ "$ipv4addr" != "$ipv4record" ]; then
   echo "IPv4 address changed. Updating record..."
   curl -s -X POST -H "Content-Type: application/json" -d "$api_edit_v4" "$url_edit_v4"; echo
-  date >> porkbun.log
-  echo "DNS A record changed from $ipv4record to $ipv4addr" >> porkbun.log
+  date >> $log_dir/porkbun.log
+  echo "DNS A record changed from $ipv4record to $ipv4addr" >> $log_dir/porkbun.log
 else
   echo "No IPv4 update necessary."
 fi
@@ -49,8 +54,8 @@ fi
 if [ "$ipv6addr" != "$ipv6record" ]; then
   echo "IPv6 address changed. Updating record..."
   curl -s -X POST -H "Content-Type: application/json" -d "$api_edit_v6" "$url_edit_v6"; echo
-  date >> porkbun.log
-  echo "DNS AAAA record changed from $ipv6record to $ipv6addr" >> porkbun.log
+  date >> $log_dir/porkbun.log
+  echo "DNS AAAA record changed from $ipv6record to $ipv6addr" >> $log_dir/porkbun.log
 else
   echo "No IPv6 update necessary."
 fi
