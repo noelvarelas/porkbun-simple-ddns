@@ -1,8 +1,8 @@
 ## porkbun-simple-ddns
 This is a simple Bash script for Linux that automatically keeps your Porkbun A and AAAA DNS records updated using the Porkbun API.
 It's meant for people with dynamic IP addresses that want to self-host a server using a domain name from Porkbun.
-There is no complicated installation, no containers to set up, etc. Just put your info in the script and run it with a cronjob.
-It's pretty self-explanatory, but examples are included here for any Linux beginners.
+There is no complicated installation, no containers to set up, etc. Just put your info in the script and run it with a cron job.
+It's pretty self-explanatory, but a configuration and cron example is included here for any Linux beginners.
 
 ### Instructions
 1. Create your Porkbun API keys at https://porkbun.com/account/api
