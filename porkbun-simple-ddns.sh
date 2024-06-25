@@ -38,7 +38,7 @@ date; echo "My domain: $fulldomain"
 # Get Current IP Addresses
 if [ "$UPDATE_A" == "true" ]; then
   ipv4_address=$(curl -s -4 https://ip.me)
-  if [ $? -ne 0 ]; then
+  if [ -z "$ipv4_address" ]; then
     echo "ERROR: Failed to get current IPv4 address."
     exit 1
   fi
@@ -46,7 +46,7 @@ if [ "$UPDATE_A" == "true" ]; then
 fi
 if [ "$UPDATE_AAAA" == "true" ]; then
   ipv6_address=$(curl -s -6 https://ip.me)
-  if [ $? -ne 0 ]; then
+  if [ -z "$ipv4_address" ]; then
     echo "ERROR: Failed to get current IPv6 address."
     exit 1
   fi
