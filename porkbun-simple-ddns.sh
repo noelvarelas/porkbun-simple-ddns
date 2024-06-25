@@ -64,9 +64,9 @@ api_uri_edit_a="https://api.porkbun.com/api/json/v3/dns/editByNameType/$DOMAIN/A
 api_uri_edit_aaaa="https://api.porkbun.com/api/json/v3/dns/editByNameType/$DOMAIN/AAAA/$SUBDOMAIN"
 
 # Porkbun API Commands
-api_cmd_get="{\"APIKEY\": \"$APIKEY\", \"SECRETAPIKEY\": \"$SECRETAPIKEY\"}"
-api_cmd_edit_a="{\"APIKEY\": \"$APIKEY\", \"SECRETAPIKEY\": \"$SECRETAPIKEY\", \"content\": \"$ipv4_address\", \"TTL\": \"$TTL\"}"
-api_cmd_edit_aaaa="{\"APIKEY\": \"$APIKEY\", \"SECRETAPIKEY\": \"$SECRETAPIKEY\", \"content\": \"$ipv6_address\", \"TTL\": \"$TTL\"}"
+api_cmd_get="{\"apikey\": \"$APIKEY\", \"secretapikey\": \"$SECRETAPIKEY\"}"
+api_cmd_edit_a="{\"apikey\": \"$APIKEY\", \"secretapikey\": \"$SECRETAPIKEY\", \"content\": \"$ipv4_address\", \"ttl\": \"$TTL\"}"
+api_cmd_edit_aaaa="{\"apikey\": \"$APIKEY\", \"secretapikey\": \"$SECRETAPIKEY\", \"content\": \"$ipv6_address\", \"ttl\": \"$TTL\"}"
 
 # Get Existing IPv4 A Record
 if [ "$UPDATE_A" == "true" ]; then
