@@ -34,7 +34,9 @@ For this example, we'll place the script in our home folder, so it will be at `~
 We will create a cron job that runs the script every 5 minutes and keeps the result of the last time it ran in a file at `~/porkbun-cron.log`
 1. Run `crontab -e`
 2. Arrow down to the bottom of the file, and copy and paste this in at the bottom:
-`3-59/5 * * * * ~/porkbun-simple-ddns.sh > ~/porkbun-cron.log`
+```
+3-59/5 * * * * ~/porkbun-simple-ddns.sh > ~/porkbun-cron.log
+```
 3. Save the file and exit. (if you're using nano: ctrl+o and enter to save, ctrl+x to exit)
 4. You can run `cat ~/porkbun-cron.log` and see the results of the last automatic update. It won't be there if you check immediately after setting it up, so give it at least five minutes.
 
