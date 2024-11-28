@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Porkbun dynamic DNS updater using the Porkbun API
+# Porkbun Dynamic DNS updater using the Porkbun API
 
 # USER CONFIGURATION (Leave subdomain empty to edit the root domain)
 readonly DOMAIN="example.com"
