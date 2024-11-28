@@ -46,7 +46,7 @@ if [ "$UPDATE_A" == "true" ]; then
 fi
 if [ "$UPDATE_AAAA" == "true" ]; then
   ipv6_address=$(curl -s -6 https://ip.me)
-  if [ -z "$ipv4_address" ]; then
+  if [ -z "$ipv6_address" ]; then
     echo "ERROR: Failed to get current IPv6 address."
     exit 1
   fi
